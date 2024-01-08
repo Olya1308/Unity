@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Collect : MonoBehaviour
 {
+    public static int AmountRes_Food = 0;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -14,5 +16,15 @@ public class Collect : MonoBehaviour
     void Update()
     {
         transform.Rotate(0, 30 * Time.deltaTime, 0);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.tag == "Player")
+        {
+            AmountRes_Food++;
+            Debug.Log(AmountRes_Food);
+            Destroy(gameObject, 1);
+        }
     }
 }
