@@ -1,10 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Collect : MonoBehaviour
 {
     public static int AmountRes_Food = 0;
+
+    public TextMeshPro GoldTextRes;
+
 
     // Start is called before the first frame update
     void Start()
@@ -23,8 +28,8 @@ public class Collect : MonoBehaviour
         if(other.tag == "Player")
         {
             AmountRes_Food++;
-            Debug.Log(AmountRes_Food);
-            Destroy(gameObject, 1);
+            //SetActive(false);
+            Destroy(gameObject);
         }
     }
 }
