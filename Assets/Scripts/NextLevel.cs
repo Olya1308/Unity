@@ -23,8 +23,8 @@ public class NextLevel : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            Debug.Log("2 Level");
-            SceneManager.LoadScene("Scenes/Level_2");
+            Debug.Log("Level 1 Done");
+            SceneManager.LoadScene("Scenes/Done_level_1");
         }
     }
 }
