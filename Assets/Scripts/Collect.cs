@@ -6,30 +6,26 @@ using UnityEngine.UI;
 
 public class Collect : MonoBehaviour
 {
-    public static int AmountRes_Food = 0;
+    public static int AmountRes_Gold = 0;
 
-    public TextMeshPro GoldTextRes;
+    public TextMeshProUGUI GoldTextRes;
 
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()
     {
-        transform.Rotate(0, 30 * Time.deltaTime, 0);
+        
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if(other.tag == "Player")
         {
-            AmountRes_Food++;
+            AmountRes_Gold++;
             //SetActive(false);
             Destroy(gameObject);
+
+            GoldTextRes.text = AmountRes_Gold.ToString();
         }
     }
 }

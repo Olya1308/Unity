@@ -9,11 +9,7 @@ public class DynamicController : MonoBehaviour
     public CharacterController characterController; 
     private Vector3 move;
 
-    //->
-    public bool isGrounded; //ми на земл≥ чи н≥?
-    public Transform CheckGround; //положенн€ н≥жок гравц€
-    public LayerMask groundLayer; //на основ≥ слою ми створили зм≥нну
-
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -31,7 +27,5 @@ public class DynamicController : MonoBehaviour
 
         transform.Translate(Vector3.forward * speed_forward * Time.deltaTime); //сам рух вперед автоматично
 
-        //->
-        isGrounded = Physics.CheckSphere(CheckGround.position, 0.1F, groundLayer);
     }
 }
