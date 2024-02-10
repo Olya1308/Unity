@@ -11819,7 +11819,7 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 8
-  rotationSpeed: 100
+  rotationSpeed: 4
   minXAngle: -90
   maxXAngle: 90
 --- !u!143 &782628381
@@ -33188,6 +33188,8 @@ SceneRoots:
   - {fileID: 269681796}
   - {fileID: 1411653374}
   - {fileID: 782628379}
+  - {fileID: 52934074}
+  - {fileID: 1439080731}
   - {fileID: 1267010309}
   - {fileID: 994260919}
   - {fileID: 2140441386}
@@ -33425,8 +33427,6 @@ SceneRoots:
   - {fileID: 1343848997}
   - {fileID: 826964764}
   - {fileID: 408477007}
-  - {fileID: 52934074}
-  - {fileID: 1439080731}
   - {fileID: 1088190394}
   - {fileID: 606944550}
   - {fileID: 1517066405}
