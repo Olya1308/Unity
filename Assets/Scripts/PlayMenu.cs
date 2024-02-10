@@ -12,8 +12,8 @@ public class PlayMenu : MonoBehaviour
 
     public void Quit()
     {
-        UnityEditor.EditorApplication.isPlaying = false; // для Unity
-        //Application.Quit(); // для додатку
+        //UnityEditor.EditorApplication.isPlaying = false; // для Unity
+       Application.Quit(); // для додатку при зборці !
     }
 
     public void AboutGame()
@@ -45,4 +45,5 @@ public class PlayMenu : MonoBehaviour
     {
         SceneManager.LoadScene("Scenes/Level_2");
     }
+   
 }

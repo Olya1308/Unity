@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -22,12 +23,12 @@ public class PlayerController : MonoBehaviour
 
     public LayerMask groundLayer; //на основі слою ми створили змінну
 
+    public float rotationSpeed = 4.0f; // Speed of player rotation around the y-axis
+    public float minXAngle = -90.0f; // Minimum allowed x-axis rotation
+    public float maxXAngle = 90.0f; // Maximum allowed x-axis rotation
 
-    // Start is called before the first frame update
-    void Start() 
-    {
-        
-    }
+    private float _rotationX = 0.0f;
+
 
     // Update is called once per frame
     void Update()
@@ -35,8 +36,13 @@ public class PlayerController : MonoBehaviour
         float x = Input.GetAxis("Horizontal"); // рух вліво вправо
         float z = Input.GetAxis("Vertical"); // вперед назад
 
-        move = transform.right * x + transform.forward * z; //напрям руху
+        transform.Rotate(Vector3.up, x * rotationSpeed * Time.deltaTime);
+        _rotationX = Mathf.Clamp(x, minXAngle, maxXAngle); 
 
+        transform.localEulerAngles = new Vector3(_rotationX, transform.localEulerAngles.y, 0.0f);
+
+        move = transform.right * x + transform.forward * z; //напрям руху
+       
         characterController.Move(move * speed * Time.deltaTime);// контрoлер руху
 
         isGrounded = Physics.CheckSphere(CheckGround.position, 0.1F, groundLayer);

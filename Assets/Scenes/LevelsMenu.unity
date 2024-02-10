@@ -1954,7 +1954,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 919427532}
         m_TargetAssemblyTypeName: PlayMenu, Assembly-CSharp
-        m_MethodName: LevelsOfGame
+        m_MethodName: SecondLevelStart
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

@@ -8,6 +8,7 @@ public class DiamondCollect : MonoBehaviour
     public static int AmountRes_Diamond = 0;
 
     public TextMeshProUGUI DiamondTextRes;
+    public GameObject Teleport_1;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -18,6 +19,11 @@ public class DiamondCollect : MonoBehaviour
             Destroy(gameObject);
 
             DiamondTextRes.text = AmountRes_Diamond.ToString();
+
+            if(AmountRes_Diamond == 3)
+            {
+                Teleport_1.SetActive(true);
+            }
         }
     }
 }

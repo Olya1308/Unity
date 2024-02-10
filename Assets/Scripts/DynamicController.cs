@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DynamicController : MonoBehaviour
 {
-    public float speed_forward = 10.0f; // швидкість вперед
+    public float speed_forward = 4.0f; // швидкість вперед
     public float speed_steer = 4.0f; //швидкість повороту
     public CharacterController characterController; 
     private Vector3 move;
